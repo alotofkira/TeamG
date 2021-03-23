@@ -13,14 +13,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Tilemaps;
 public class ScrollHorizontal : MonoBehaviour
 {
     public bool FlipDirection = false;
     public float MoveSpeed = 10.0f;
     public float WrapZoneLeft = -18.0f;
-    public float WrapZoneRight = 56.0f;
-
+    public float WrapZoneRight = 93.0f;
     // Update is called once per frame
     void Update()
     {
@@ -56,5 +55,6 @@ public class ScrollHorizontal : MonoBehaviour
 
         // Set new position
         transform.position = position;
+
     }
 }

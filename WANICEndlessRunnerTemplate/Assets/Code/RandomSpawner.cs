@@ -63,10 +63,10 @@ public class RandomSpawner : MonoBehaviour
         // Roll die to determine which object to spawn
         int dieRoll = Random.Range(1, totalChance + 1);
 
-        // Determine spawn position
-        Vector3 spawnPosition = transform.position 
-            + new Vector3(0, Random.Range(0, transform.localScale.y), 0);
-
+        // Determine spawn position [[[BELOW IS WITH RANDOM POSITION, NOT NEEDED FOR ZOMBIES]
+        /* Vector3 spawnPosition = transform.position 
+             + new Vector3(0, Random.Range(0, transform.localScale.y), 0);*/
+        Vector3 spawnPosition = transform.position;
         GameObject spawnedObject = null;
 
         // Align to grid
@@ -75,7 +75,12 @@ public class RandomSpawner : MonoBehaviour
             spawnPosition.x = Mathf.Floor(spawnPosition.x);
             spawnPosition.y = Mathf.Floor(spawnPosition.y) + 0.5f;
         }
-
+        // my adjustment to ensure no duplicate spawning, only works for lower layer 
+        RaycastHit2D hitdown = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), new Vector2(transform.position.x, transform.position.y - 1));
+        if (hitdown.collider.gameObject == null)
+        {
+            return;
+        }
         // Create object based on die roll
         if(dieRoll <= Object1SpawnChance)
         {

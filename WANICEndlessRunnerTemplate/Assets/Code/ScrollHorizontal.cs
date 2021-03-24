@@ -19,7 +19,13 @@ public class ScrollHorizontal : MonoBehaviour
     public bool FlipDirection = false;
     public float MoveSpeed = 10.0f;
     public float WrapZoneLeft = -18.0f;
-    public float WrapZoneRight = 93.0f;
+    public float WrapZoneRight = 130.0f;
+    public float timer = 0.0f;
+    private GameObject holePanel = null;
+    void Start()
+    {
+        holePanel = GameObject.Find("HolePanel");
+    }
     // Update is called once per frame
     void Update()
     {
@@ -39,12 +45,12 @@ public class ScrollHorizontal : MonoBehaviour
         {
             if (transform.position.x <= WrapZoneLeft)
             {
-                position.x = WrapZoneRight;
+                position.x = WrapZoneRight + (transform.position.x-WrapZoneLeft);
             }
         }
 
         // Move
-        if(FlipDirection)
+        if (FlipDirection)
         {
             position.x += MoveSpeed * Time.deltaTime;
         }
@@ -52,9 +58,19 @@ public class ScrollHorizontal : MonoBehaviour
         {
             position.x -= MoveSpeed * Time.deltaTime;
         }
-
         // Set new position
         transform.position = position;
 
+        // swawp holeblock at some times -----> google how to swap 2 moving gameobjects
+      /*  timer += Time.deltaTime;
+        if(timer > 2 && holePanel.transform.position.x > 92 && transform.position.x >= 92 && gameObject.name.Contains("TopPanel"))
+        {
+            timer = 0;
+            var temp = transform.position.x;
+            var temp2 = holePanel.transform.position.x;
+            transform.position = new Vector3(holePanel.transform.position.x, transform.position.y, 0);
+            holePanel.transform.position = new Vector3((temp2-temp), transform.position.y, 0);
+
+        }*/
     }
 }

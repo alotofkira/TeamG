@@ -75,14 +75,15 @@ public class RandomSpawner : MonoBehaviour
             spawnPosition.x = Mathf.Floor(spawnPosition.x);
             spawnPosition.y = Mathf.Floor(spawnPosition.y) + 0.5f;
         }
-        // my adjustment to ensure no duplicate spawning, only works for lower layer 
-        RaycastHit2D hitdown = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), new Vector2(transform.position.x, transform.position.y - 1));
-        if (hitdown.collider.gameObject == null)
+        // no more holes nor duplicates
+        RaycastHit2D hitdown = Physics2D.Raycast(new Vector2(spawnPosition.x, spawnPosition.y), new Vector2(0, -0.5f),1.0f);
+        RaycastHit2D duplicate = Physics2D.Raycast(new Vector2(spawnPosition.x, spawnPosition.y), new Vector2(-0.5f, 0), 0.5f);
+        if (!hitdown.collider || duplicate.collider)
         {
             return;
         }
         // Create object based on die roll
-        if(dieRoll <= Object1SpawnChance)
+        if (dieRoll <= Object1SpawnChance)
         {
             spawnedObject = Instantiate(Object1Prefab);
         }

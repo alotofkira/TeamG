@@ -18,8 +18,8 @@ using UnityEngine;
 public class PlayerMovementController : MonoBehaviour
 {
     public float MoveSpeed = 10;
-    public int MaxHealth = 3;
-    public float JumpHeight = 5;
+    public int MaxHealth = 1; // edited for purpose of game
+    public float JumpHeight = 2; // edited
     public int MaxNumberOfJumps = 2;
     public KeyCode JumpKey = KeyCode.Space;
     public KeyCode SlideKey = KeyCode.LeftShift;

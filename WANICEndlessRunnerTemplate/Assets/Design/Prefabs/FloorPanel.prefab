@@ -1582,4 +1582,4 @@ MonoBehaviour:
   FlipDirection: 0
   MoveSpeed: 10
   WrapZoneLeft: -18
-  WrapZoneRight: 93
+  WrapZoneRight: 130

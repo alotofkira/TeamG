@@ -19,7 +19,7 @@ public class PlayerMovementController : MonoBehaviour
 {
     public float MoveSpeed = 10;
     public int MaxHealth = 1; // edited for purpose of game
-    public float JumpHeight = 2; // edited
+    public float JumpHeight = 0.005f; // edited
     public int MaxNumberOfJumps = 2;
     public KeyCode JumpKey = KeyCode.Space;
     public KeyCode SlideKey = KeyCode.LeftShift;
@@ -61,13 +61,13 @@ public class PlayerMovementController : MonoBehaviour
     {
         bool grounded = IsGrounded();
 
-        // Jumping
-        if (Input.GetKeyDown(JumpKey))
+        // Jumping, no double jumps to escape top screen border
+        if (Input.GetKeyDown(JumpKey) && transform.position.y < 10)
         {
             if (jumpsRemaining > 0)
             {
                 animationManager.SwitchTo(PlayerAnimationStates.Jump);
-                var jump_vec = new Vector3(0,JumpHeight,0);
+                var jump_vec = new Vector3(0, 1.1f * JumpHeight,0);
                 gameObject.GetComponent<Rigidbody2D>().velocity = jump_vec;
                 jumpsRemaining -= 1;
             }
@@ -81,6 +81,13 @@ public class PlayerMovementController : MonoBehaviour
         else if (!Input.GetKey(SlideKey) && grounded)
         {
             animationManager.SwitchTo(PlayerAnimationStates.Run);
+        }
+        // Accelerated Downfall
+        else if(Input.GetKey(SlideKey) && !grounded)
+        {
+            animationManager.SwitchTo(PlayerAnimationStates.Slide);
+            var jump_vec = new Vector3(0, -1.5f * JumpHeight, 0);
+            gameObject.GetComponent<Rigidbody2D>().velocity = jump_vec;
         }
         // Falling
         else

@@ -62,15 +62,16 @@ public class ScrollHorizontal : MonoBehaviour
         transform.position = position;
 
         // swawp holeblock at some times -----> google how to swap 2 moving gameobjects
-      /*  timer += Time.deltaTime;
-        if(timer > 2 && holePanel.transform.position.x > 92 && transform.position.x >= 92 && gameObject.name.Contains("TopPanel"))
+        timer += Time.deltaTime;
+        if(timer > 2 && holePanel.transform.position.x >= 92 && transform.position.x >= 92 && gameObject.name.Contains("TopPanel"))
         {
+            // it has a weird offset that i cant seem to fix
             timer = 0;
-            var temp = transform.position.x;
-            var temp2 = holePanel.transform.position.x;
-            transform.position = new Vector3(holePanel.transform.position.x, transform.position.y, 0);
-            holePanel.transform.position = new Vector3((temp2-temp), transform.position.y, 0);
+            var temp = transform.position;
+            transform.position = holePanel.transform.position;
+            holePanel.transform.position = temp;
 
-        }*/
+
+        }
     }
 }

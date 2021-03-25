@@ -20,11 +20,11 @@ public class Ladder : MonoBehaviour
         {
             if(collision.rigidbody.velocity.y < 0)
             {
-                collision.transform.position = new Vector2(collision.transform.position.x, 4.5f);
+                collision.transform.position = new Vector2(collision.transform.position.x, 2.5f);
             }
             else
             {
-                collision.transform.position = new Vector2(collision.transform.position.x, 11.5f);
+                collision.transform.position = new Vector2(collision.transform.position.x, 9.5f);
             }
         }
     }

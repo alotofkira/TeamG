@@ -3,6 +3,7 @@
 // File Name:	RandomSpawner.cs
 // Author(s):	Jeremy Kings (j.kings) - Unity Project
 //              Nathan Mueller - original Zero Engine project
+//              Alex Dzius - Tech Lead on Team G in Endless Runner Project
 // Project:		Endless Runner
 // Course:		WANIC VGP
 //
@@ -17,7 +18,7 @@ using UnityEngine;
 public class RandomSpawner : MonoBehaviour
 {
     // Object spawn timing
-    public Vector2 SpawnInterval = new Vector2(0, 1);
+    public Vector2 SpawnInterval = new Vector2(0, 6); // likely increase immensly
     // Whether to align object spawn positions to grid
     public bool AlignSpawnPosition = false;
 
@@ -76,8 +77,8 @@ public class RandomSpawner : MonoBehaviour
             spawnPosition.y = Mathf.Floor(spawnPosition.y) + 0.5f;
         }
         // no more holes nor duplicates
-        RaycastHit2D hitdown = Physics2D.Raycast(new Vector2(spawnPosition.x, spawnPosition.y), new Vector2(0, -0.5f),1.0f);
-        RaycastHit2D duplicate = Physics2D.Raycast(new Vector2(spawnPosition.x, spawnPosition.y), new Vector2(-0.5f, 0), 0.5f);
+        RaycastHit2D hitdown = Physics2D.Raycast(new Vector2(spawnPosition.x, spawnPosition.y), new Vector2(0, -0.5f),2.0f);
+        RaycastHit2D duplicate = Physics2D.Raycast(new Vector2(spawnPosition.x, spawnPosition.y), new Vector2(-1f, 0), 1f);
         if (!hitdown.collider || duplicate.collider)
         {
             return;
@@ -111,7 +112,11 @@ public class RandomSpawner : MonoBehaviour
             spawnedObject = Instantiate(Object6Prefab);
         }
 
-        // Set object position
+        // Set object position, and adjust certain things to be in the right place. Will likely be removed once assets flow in
+        if (!spawnedObject.name.Contains("Zombie"))
+        {
+            spawnPosition.y -= 0.23f;
+        }
         spawnedObject.transform.position = spawnPosition;
     }
 }

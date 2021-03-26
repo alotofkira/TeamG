@@ -3,6 +3,7 @@
 // File Name:	PlayerAnimationManager.cs
 // Author(s):	Jeremy Kings (j.kings) - Unity Project
 //              Nathan Mueller - original Zero Engine project
+//              Alex Dzius - Tech Lead on Team G in Endless Runner Project
 // Project:		Endless Runner
 // Course:		WANIC VGP
 //
@@ -82,14 +83,21 @@ public class PlayerAnimationManager : MonoBehaviour
 
     public void PlayCurrentAnimation()
     {
+        //ensuring jump works as intended
+        Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
+        if (rb.velocity.y < 0)
+        {
+            animator.Play("Slide");
+        }
+        else if (rb.velocity.y > 0)
+        {
+            animator.Play("Jump");
+        }
         // Don't bother if we haven't
         // switched states recently
         if (CurrentState == PreviousState)
             return;
 
-        // Debug log for testing purposes - feel free to remove
-        //Debug.Log("PrevState: " + PreviousState.ToString()
-            //+ ", CurrentState: " + CurrentState.ToString());
 
         // Play state based on value of CurrentState
         switch (CurrentState)
@@ -98,7 +106,14 @@ public class PlayerAnimationManager : MonoBehaviour
                 animator.Play("Run");
                 break;
             case PlayerAnimationStates.Jump:
-                animator.Play("Jump");
+                if(rb.velocity.y < 0)
+                {
+                    animator.Play("Slide");
+                }
+                else
+                {
+                    animator.Play("Jump");
+                }
                 break;
             case PlayerAnimationStates.Slide:
                 animator.Play("Slide");

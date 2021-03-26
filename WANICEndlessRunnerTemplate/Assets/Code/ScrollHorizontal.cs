@@ -3,6 +3,7 @@
 // File Name:	ScrollHorizontal.cs
 // Author(s):	Jeremy Kings (j.kings) - Unity Project
 //              Nathan Mueller - original Zero Engine project
+//              Alex Dzius - Tech Lead on Team G in Endless Runner Project
 // Project:		Endless Runner
 // Course:		WANIC VGP
 //
@@ -62,16 +63,16 @@ public class ScrollHorizontal : MonoBehaviour
         transform.position = position;
 
         // swawp holeblock at some times -----> google how to swap 2 moving gameobjects
-        timer += Time.deltaTime;
-        if(timer > 2 && holePanel.transform.position.x >= 92 && transform.position.x >= 92 && gameObject.name.Contains("TopPanel"))
+        // i may return to this later but this really does notwant to work
+       /* timer += Time.deltaTime;
+        if(timer > 2 && (holePanel.transform.position.x >= 92 && transform.position.x >= 92) && gameObject.name.Contains("TopPanel"))
         {
             // it has a weird offset that i cant seem to fix
             timer = 0;
             var temp = transform.position;
+            var temp2 = holePanel.transform.position;
             transform.position = holePanel.transform.position;
             holePanel.transform.position = temp;
-
-
-        }
+        }*/
     }
 }

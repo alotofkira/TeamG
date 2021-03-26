@@ -3,6 +3,7 @@
 // File Name:	PlayerMovementController.cs
 // Author(s):	Jeremy Kings (j.kings) - Unity Project
 //              Nathan Mueller - original Zero Engine project
+//              Alex Dzius - Tech Lead on Team G in Endless Runner Project
 // Project:		Endless Runner
 // Course:		WANIC VGP
 //
@@ -19,7 +20,7 @@ public class PlayerMovementController : MonoBehaviour
 {
     public float MoveSpeed = 10;
     public int MaxHealth = 1; // edited for purpose of game
-    public float JumpHeight = 0.005f; // edited
+    public float JumpHeight = 5f; // edited
     public int MaxNumberOfJumps = 2;
     public KeyCode JumpKey = KeyCode.Space;
     public KeyCode SlideKey = KeyCode.LeftShift;
@@ -67,16 +68,21 @@ public class PlayerMovementController : MonoBehaviour
             if (jumpsRemaining > 0)
             {
                 animationManager.SwitchTo(PlayerAnimationStates.Jump);
-                var jump_vec = new Vector3(0, 1.1f * JumpHeight,0);
+                var jump_vec = new Vector3(0, JumpHeight, 0);
+                // if this is a double jump, increase 
+                if (jumpsRemaining == 1)
+                {
+                    jump_vec = new Vector3(0, 1.5f * JumpHeight, 0);
+                }
                 gameObject.GetComponent<Rigidbody2D>().velocity = jump_vec;
                 jumpsRemaining -= 1;
             }
         }
-        // Sliding
-        else if (Input.GetKey(SlideKey) && grounded)
-        {
-            animationManager.SwitchTo(PlayerAnimationStates.Slide);
-        }
+        // Sliding --- may return in the future, yet it is unlikely
+        //else if (Input.GetKey(SlideKey) && grounded)
+        //{
+       //     animationManager.SwitchTo(PlayerAnimationStates.Slide);
+       // }
         // Running
         else if (!Input.GetKey(SlideKey) && grounded)
         {
@@ -90,7 +96,7 @@ public class PlayerMovementController : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().velocity = jump_vec;
         }
         // Falling
-        else
+        else if(!grounded)
         {
             animationManager.SwitchTo(PlayerAnimationStates.Jump);
         }

@@ -41,10 +41,12 @@ public class Obstacle : MonoBehaviour
         {
             moveSpeed = -player.GetComponent<PlayerMovementController>().MoveSpeed;
         }
-
-        physics.velocity = new Vector3(moveSpeed, 0, 0);
-        transform.position = new Vector3(transform.position.x, 
-            yPosition, transform.position.z);
+        if (!gameObject.name.Contains("Acid"))
+        {
+            physics.velocity = new Vector3(moveSpeed, 0, 0);
+            transform.position = new Vector3(transform.position.x,
+                yPosition, transform.position.z);
+        }
 
         if(transform.position.x <= DestroyXLimit)
         {

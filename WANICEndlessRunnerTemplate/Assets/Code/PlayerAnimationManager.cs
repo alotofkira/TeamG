@@ -31,12 +31,14 @@ public class PlayerAnimationManager : MonoBehaviour
 
     private float CurrInvulnTime = 0;
     private Animator animator;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
         SwitchTo(CurrentState);
         animator = GetComponent<Animator>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -83,8 +85,7 @@ public class PlayerAnimationManager : MonoBehaviour
 
     public void PlayCurrentAnimation()
     {
-        //ensuring jump works as intended
-        Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
+        //fix for transition, allows for proper transition between animations
         if (rb.velocity.y < 0)
         {
             animator.Play("Slide");
@@ -92,6 +93,10 @@ public class PlayerAnimationManager : MonoBehaviour
         else if (rb.velocity.y > 0)
         {
             animator.Play("Jump");
+        }
+        else
+        {
+            animator.Play("Run");
         }
         // Don't bother if we haven't
         // switched states recently

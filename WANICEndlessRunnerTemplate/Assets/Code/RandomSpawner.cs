@@ -24,17 +24,17 @@ public class RandomSpawner : MonoBehaviour
 
     // Object prefabs and spawn chances
     public GameObject Object1Prefab = null;
-    public int Object1SpawnChance = 1;
+    public int Object1SpawnChance = 100;
     public GameObject Object2Prefab = null;
-    public int Object2SpawnChance = 1;
+    public int Object2SpawnChance = 100;
     public GameObject Object3Prefab = null;
-    public int Object3SpawnChance = 1;
+    public int Object3SpawnChance = 100;
     public GameObject Object4Prefab = null;
     public int Object4SpawnChance = 1;
     public GameObject Object5Prefab = null;
-    public int Object5SpawnChance = 1;
+    public int Object5SpawnChance = 100;
     public GameObject Object6Prefab = null;
-    public int Object6SpawnChance = 1;
+    public int Object6SpawnChance = 100;
 
     // Private variables
     private int totalChance = 0;
@@ -77,7 +77,7 @@ public class RandomSpawner : MonoBehaviour
             spawnPosition.y = Mathf.Floor(spawnPosition.y) + 0.5f;
         }
         // no more holes nor duplicates
-        RaycastHit2D hitdown = Physics2D.Raycast(new Vector2(spawnPosition.x, spawnPosition.y), new Vector2(0, -0.5f),2.0f);
+        RaycastHit2D hitdown = Physics2D.Raycast(new Vector2(spawnPosition.x, spawnPosition.y), new Vector2(0.5f, -0.5f),2.0f);
         RaycastHit2D duplicate = Physics2D.Raycast(new Vector2(spawnPosition.x, spawnPosition.y), new Vector2(-1f, 0), 1f);
         if (!hitdown.collider || duplicate.collider)
         {
@@ -100,7 +100,10 @@ public class RandomSpawner : MonoBehaviour
         else if (dieRoll <= Object4SpawnChance + Object3SpawnChance 
             + Object2SpawnChance + Object1SpawnChance)
         {
-            spawnedObject = Instantiate(Object4Prefab);
+            //spawnedObject = Instantiate(Object4Prefab);
+            // Object 4 has been chosen to correspond to acid rain.
+            if(!AcidRainController.RainInProgress)
+                AcidRainController.announceRain = true;
         }
         else if (dieRoll <= Object5SpawnChance + Object4SpawnChance 
             + Object3SpawnChance + Object2SpawnChance + Object1SpawnChance)

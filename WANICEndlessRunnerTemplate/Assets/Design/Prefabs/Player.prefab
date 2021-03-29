@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab4943587f011748bb7f54221d917e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBetweenSteps: 0.33
+  TimeBetweenSteps: 0.45
   audioClips:
   - {fileID: 8300000, guid: 903f48b2bd555ce4891f11725e8d33a8, type: 3}
   - {fileID: 8300000, guid: e22c1c90a49244d4daa6dc82b1a8a843, type: 3}

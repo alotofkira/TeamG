@@ -21,7 +21,8 @@ public enum ButtonFunctions
     Play,
     Exit,
     Restart,
-    MainMenu
+    MainMenu,
+    Explain
 }
 
 public class MenuButton : MonoBehaviour
@@ -32,6 +33,7 @@ public class MenuButton : MonoBehaviour
     // Function to call when button is clicked
     private delegate void ButtonAction();
     private ButtonAction buttonAction;
+    [SerializeField] private GameObject explainText;
 
     // Start is called before the first frame update
     void Start()
@@ -52,12 +54,26 @@ public class MenuButton : MonoBehaviour
             case ButtonFunctions.MainMenu:
                 buttonAction = MainMenu;
                 break;
+            case ButtonFunctions.Explain:
+                buttonAction = Explain;
+                break;
         }
     }
 
     public void OnButtonClicked()
     {
         buttonAction();
+    }
+    private void Explain()
+    {
+        if (explainText.activeSelf)
+        {
+            explainText.SetActive(false);
+        }
+        else
+        {
+            explainText.SetActive(true);
+        }
     }
 
     private void Play()

@@ -56,6 +56,9 @@ public class RandomSpawner : MonoBehaviour
         {
             timeTilNextSpawn += Random.Range(SpawnInterval.x, SpawnInterval.y);
             SpawnRandomObject();
+            // A frequency where at about 10,000m the game would become exponentially hard
+            // Remove a 0 to have said situation be the case at 1000m
+            SpawnInterval.y = 1.69f - PlayerSaveData.DistanceRun / 10000; 
         }
     }
 
@@ -77,9 +80,12 @@ public class RandomSpawner : MonoBehaviour
             spawnPosition.y = Mathf.Floor(spawnPosition.y) + 0.5f;
         }
         // no more holes nor duplicates
-        RaycastHit2D hitdown = Physics2D.Raycast(new Vector2(spawnPosition.x, spawnPosition.y), new Vector2(0.5f, -0.5f),2.0f);
-        RaycastHit2D duplicate = Physics2D.Raycast(new Vector2(spawnPosition.x, spawnPosition.y), new Vector2(-1f, 0), 1f);
-        if (!hitdown.collider || duplicate.collider)
+        RaycastHit2D hitdown = Physics2D.Raycast(new Vector2(spawnPosition.x, spawnPosition.y), new Vector2(0, -1f), 0.8f);
+        RaycastHit2D duplicate = Physics2D.Raycast(new Vector2(spawnPosition.x, spawnPosition.y), new Vector2(-2f, 0), 1f);
+        // weird edgecase but it is needed to ensure that we dont have things hanging off the level 2 cliffs
+        RaycastHit2D leftedge = Physics2D.Raycast(new Vector2(spawnPosition.x, spawnPosition.y), new Vector2(0.5f, -1f), 1f);
+        RaycastHit2D rightedge = Physics2D.Raycast(new Vector2(spawnPosition.x, spawnPosition.y), new Vector2(-0.5f, -1f), 1f);
+        if (!hitdown.collider || duplicate.collider || !leftedge.collider || !rightedge.collider )
         {
             return;
         }

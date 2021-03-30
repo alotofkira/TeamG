@@ -1,6 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AcidRain
+    - AcidRainController
     - FootstepSounds
     - Ladder
     - MenuButton
@@ -32,10 +34,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -97,19 +97,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12360}
     - Class: 114
-      Script: {instanceID: 12690}
+      Script: {instanceID: 12636}
     - Class: 114
-      Script: {instanceID: 13246}
+      Script: {instanceID: 12692}
     - Class: 114
-      Script: {instanceID: 13348}
+      Script: {instanceID: 13248}
     - Class: 114
-      Script: {instanceID: 13662}
+      Script: {instanceID: 13350}
     - Class: 114
-      Script: {instanceID: 13752}
+      Script: {instanceID: 13458}
     - Class: 114
-      Script: {instanceID: 13766}
+      Script: {instanceID: 13666}
     - Class: 114
-      Script: {instanceID: 14380}
+      Script: {instanceID: 13756}
+    - Class: 114
+      Script: {instanceID: 13770}
+    - Class: 114
+      Script: {instanceID: 14384}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -153,6 +157,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -164,21 +172,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12346}
     - Class: 114
-      Script: {instanceID: 13000}
+      Script: {instanceID: 13002}
     - Class: 114
-      Script: {instanceID: 13126}
+      Script: {instanceID: 13128}
     - Class: 114
-      Script: {instanceID: 13348}
+      Script: {instanceID: 13350}
     - Class: 114
-      Script: {instanceID: 13366}
+      Script: {instanceID: 13368}
     - Class: 114
-      Script: {instanceID: 13662}
+      Script: {instanceID: 13666}
     - Class: 114
-      Script: {instanceID: 13766}
+      Script: {instanceID: 13770}
     - Class: 114
-      Script: {instanceID: 14042}
+      Script: {instanceID: 14046}
     - Class: 114
-      Script: {instanceID: 14380}
+      Script: {instanceID: 14384}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -219,19 +227,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12294}
     - Class: 114
-      Script: {instanceID: 13000}
+      Script: {instanceID: 13002}
     - Class: 114
-      Script: {instanceID: 13126}
+      Script: {instanceID: 13128}
     - Class: 114
-      Script: {instanceID: 13348}
+      Script: {instanceID: 13350}
     - Class: 114
-      Script: {instanceID: 13662}
+      Script: {instanceID: 13666}
     - Class: 114
-      Script: {instanceID: 13766}
+      Script: {instanceID: 13770}
     - Class: 114
-      Script: {instanceID: 14264}
+      Script: {instanceID: 14268}
     - Class: 114
-      Script: {instanceID: 14380}
+      Script: {instanceID: 14384}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -515,6 +523,12 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: 34882e66dbf74ebdf1b8515a9136eb46
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AcidRainController
+  - hash:
+      serializedVersion: 2
       Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -527,7 +541,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: f877cb40a2c120ab5240ba05814069d8
+      Hash: 081b96adf94693885bf7f5653a6b15c2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovementController
@@ -569,7 +583,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 7b91b8ab3efaacb9c08ab5288503ea97
+      Hash: 1d4abc1cd0545e06dcce119cdb2513b3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuButton
@@ -639,6 +653,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: Physics2DRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AcidRain
   - hash:
       serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
@@ -800,4 +820,4 @@ ScriptsOnlyBuild:
   - Assets/Design/Scenes/MainMenu.unity
   - Assets/Design/Scenes/GameLevel.unity
   - Assets/Design/Scenes/ScoreScreen.unity
-  playerPath: C:/Users/Alex/Desktop/FirstWeekBuild/EndlessRunnerTemplate.exe
+  playerPath: C:/Users/Alex/Desktop/AlphaBuild/EndlessRunnerTemplate.exe

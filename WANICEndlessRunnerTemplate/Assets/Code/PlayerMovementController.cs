@@ -24,7 +24,8 @@ public class PlayerMovementController : MonoBehaviour
     public int MaxNumberOfJumps = 2;
     public KeyCode JumpKey = KeyCode.Space;
     public KeyCode SlideKey = KeyCode.LeftShift;
-    
+    [SerializeField] public AudioClip death;
+
     private int jumpsRemaining = 0;
     private int currentHealth = 0;
     private string nameOfHealthDisplayObject = "HealthBar";
@@ -130,8 +131,7 @@ public class PlayerMovementController : MonoBehaviour
                 // Game Over
                 if (currentHealth <= 0)
                 {
-                    // Load score level
-                    UnityEngine.SceneManagement.SceneManager.LoadScene("ScoreScreen");
+                    StartCoroutine(LoadScreen("ScoreScreen"));
                 }
                 if (obstacle.DestroyOnPlayerCollision)
                 {
@@ -150,7 +150,12 @@ public class PlayerMovementController : MonoBehaviour
             jumpsRemaining = MaxNumberOfJumps;
         } 
     }
-
+    IEnumerator LoadScreen(string l)
+    {
+        GetComponent<AudioSource>().PlayOneShot(death);
+        yield return new WaitForSeconds(death.length);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(l);
+    }
     public bool IsGrounded()
     {
         return jumpsRemaining == MaxNumberOfJumps;

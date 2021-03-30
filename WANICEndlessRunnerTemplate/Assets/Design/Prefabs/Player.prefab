@@ -148,11 +148,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 10
-  MaxHealth: 3
+  MaxHealth: 1
   JumpHeight: 5
   MaxNumberOfJumps: 2
   JumpKey: 32
   SlideKey: 304
+  death: {fileID: 8300000, guid: 31c2f5ea824b42142a9ea6134058c81e, type: 3}
 --- !u!95 &22022183816750200
 Animator:
   serializedVersion: 3

@@ -805,17 +805,37 @@ PrefabInstance:
     - target: {fileID: 124334516056862097, guid: 792ad0a553242c04fbf611039a0c82a8,
         type: 3}
       propertyPath: Object1SpawnChance
-      value: 1
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 124334516056862097, guid: 792ad0a553242c04fbf611039a0c82a8,
         type: 3}
       propertyPath: Object2SpawnChance
-      value: 1
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 124334516056862097, guid: 792ad0a553242c04fbf611039a0c82a8,
         type: 3}
       propertyPath: Object3SpawnChance
-      value: 1
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 124334516056862097, guid: 792ad0a553242c04fbf611039a0c82a8,
+        type: 3}
+      propertyPath: Object4SpawnChance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 124334516056862097, guid: 792ad0a553242c04fbf611039a0c82a8,
+        type: 3}
+      propertyPath: Object5SpawnChance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 124334516056862097, guid: 792ad0a553242c04fbf611039a0c82a8,
+        type: 3}
+      propertyPath: Object6SpawnChance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 124334516056862097, guid: 792ad0a553242c04fbf611039a0c82a8,
+        type: 3}
+      propertyPath: SpawnInterval.y
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6508006467729488154, guid: 792ad0a553242c04fbf611039a0c82a8,
         type: 3}
@@ -1361,12 +1381,12 @@ PrefabInstance:
     - target: {fileID: 5702680126517417177, guid: 44a2f1fd3e785c143ba8383e2edee21b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: 14.84
       objectReference: {fileID: 0}
     - target: {fileID: 5702680126517417177, guid: 44a2f1fd3e785c143ba8383e2edee21b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.19
+      value: 4.01
       objectReference: {fileID: 0}
     - target: {fileID: 5702680126517417177, guid: 44a2f1fd3e785c143ba8383e2edee21b,
         type: 3}
@@ -1660,17 +1680,17 @@ PrefabInstance:
     - target: {fileID: 124334516056862097, guid: 792ad0a553242c04fbf611039a0c82a8,
         type: 3}
       propertyPath: Object1SpawnChance
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 124334516056862097, guid: 792ad0a553242c04fbf611039a0c82a8,
         type: 3}
       propertyPath: Object2SpawnChance
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 124334516056862097, guid: 792ad0a553242c04fbf611039a0c82a8,
         type: 3}
       propertyPath: Object3SpawnChance
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 124334516056862097, guid: 792ad0a553242c04fbf611039a0c82a8,
         type: 3}
@@ -1680,7 +1700,17 @@ PrefabInstance:
     - target: {fileID: 124334516056862097, guid: 792ad0a553242c04fbf611039a0c82a8,
         type: 3}
       propertyPath: SpawnInterval.y
-      value: 2
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 124334516056862097, guid: 792ad0a553242c04fbf611039a0c82a8,
+        type: 3}
+      propertyPath: Object5SpawnChance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124334516056862097, guid: 792ad0a553242c04fbf611039a0c82a8,
+        type: 3}
+      propertyPath: Object4SpawnChance
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6508006467729488154, guid: 792ad0a553242c04fbf611039a0c82a8,
         type: 3}

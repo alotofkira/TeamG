@@ -10,7 +10,9 @@ public class AcidRain : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Zombie" || collision.gameObject.tag == "Player")
+        if(collision.gameObject.CompareTag("Floor")
+            || collision.gameObject.CompareTag("Obstacle")
+            || collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
         }

@@ -152,9 +152,20 @@ public class PlayerMovementController : MonoBehaviour
     }
     IEnumerator LoadScreen(string l)
     {
+        
         GetComponent<AudioSource>().PlayOneShot(death);
-        yield return new WaitForSeconds(death.length);
+        var h = Time.timeScale;
+        Time.timeScale = 0.1f;
+        float t = 0;
+        while( t <= 0.35f) // some cool animation for death, can be just replaced by disappearance gameObject.transform.localScale = 0; :<
+        {
+            t += Time.deltaTime;
+            var ns = Mathf.Lerp(1, 0, t);
+            transform.localScale = new Vector3(ns, ns, 1);
+        }
+        yield return new WaitForSeconds(.035f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(l);
+        Time.timeScale = h;
     }
     public bool IsGrounded()
     {

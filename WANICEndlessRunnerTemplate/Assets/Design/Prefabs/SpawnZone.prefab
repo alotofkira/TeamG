@@ -107,7 +107,7 @@ MonoBehaviour:
   Object3SpawnChance: 1
   Object4Prefab: {fileID: 3183144100498278091, guid: 3259249d19af19c4098152b434ee824a,
     type: 3}
-  Object4SpawnChance: 1
+  Object4SpawnChance: 8
   Object5Prefab: {fileID: 3183144100498278091, guid: 3259249d19af19c4098152b434ee824a,
     type: 3}
   Object5SpawnChance: 1

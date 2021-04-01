@@ -58,7 +58,7 @@ public class RandomSpawner : MonoBehaviour
             SpawnRandomObject();
             // A frequency where at about 10,000m the game would become exponentially hard
             // Remove a 0 to have said situation be the case at 1000m
-            SpawnInterval.y = 1.69f - PlayerSaveData.DistanceRun / 10000; 
+            SpawnInterval.y = 1.78f - PlayerSaveData.DistanceRun / 10000; 
         }
     }
 
@@ -67,9 +67,6 @@ public class RandomSpawner : MonoBehaviour
         // Roll die to determine which object to spawn
         int dieRoll = Random.Range(1, totalChance + 1);
 
-        // Determine spawn position [[[BELOW IS WITH RANDOM POSITION, NOT NEEDED FOR ZOMBIES]
-        /* Vector3 spawnPosition = transform.position 
-             + new Vector3(0, Random.Range(0, transform.localScale.y), 0);*/
         Vector3 spawnPosition = transform.position;
         GameObject spawnedObject = null;
 
@@ -106,7 +103,6 @@ public class RandomSpawner : MonoBehaviour
         else if (dieRoll <= Object4SpawnChance + Object3SpawnChance 
             + Object2SpawnChance + Object1SpawnChance)
         {
-            //spawnedObject = Instantiate(Object4Prefab);
             // Object 4 has been chosen to correspond to acid rain.
             if(!AcidRainController.RainInProgress)
                 AcidRainController.announceRain = true;
@@ -121,11 +117,6 @@ public class RandomSpawner : MonoBehaviour
             spawnedObject = Instantiate(Object6Prefab);
         }
 
-        // Set object position, and adjust certain things to be in the right place. Will likely be removed once assets flow in
-        if (!spawnedObject.name.Contains("Zombie"))
-        {
-            spawnPosition.y -= 0.23f;
-        }
         spawnedObject.transform.position = spawnPosition;
     }
 }

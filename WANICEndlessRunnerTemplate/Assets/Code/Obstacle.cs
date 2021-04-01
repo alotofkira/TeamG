@@ -3,13 +3,13 @@
 // File Name:	Obstacle.cs
 // Author(s):	Jeremy Kings (j.kings) - Unity Project
 //              Nathan Mueller - original Zero Engine project
+//              Alex Dzius - Tech Lead on Team G in Endless Runner Project
 // Project:		Endless Runner
-// Course:		WANIC VGP
+// Course:		WANIC VGP Year 2
 //
 // Copyright © 2021 DigiPen (USA) Corporation.
 //
 //------------------------------------------------------------------------------
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

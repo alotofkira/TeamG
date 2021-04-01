@@ -1,9 +1,9 @@
 ﻿//------------------------------------------------------------------------------
 //
 // File Name:	Ladder.cs
-// Author(s):	Alex Dzius
+// Author(s):	Alex Dzius - Tech Lead on Team G in Endless Runner Project
 // Project:		Endless Runner
-// Course:		WANIC VGP
+// Course:		WANIC VGP Year 2
 //
 //
 //------------------------------------------------------------------------------

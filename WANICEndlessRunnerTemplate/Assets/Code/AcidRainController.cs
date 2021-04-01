@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿//------------------------------------------------------------------------------
+//
+// File Name:	AcidRainController.cs
+// Author(s):	Alex Dzius - Tech Lead on Team G in Endless Runner Project
+// Project:		Endless Runner
+// Course:		WANIC VGP Year 2
+//
+//
+//------------------------------------------------------------------------------
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;

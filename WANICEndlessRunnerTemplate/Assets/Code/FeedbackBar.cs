@@ -7,7 +7,8 @@
 // Course:		WANIC VGP
 //
 // Copyright © 2021 DigiPen (USA) Corporation.
-//
+// rip bar, you'll be missed
+// died due to one-life-only decision
 //------------------------------------------------------------------------------
 
 using System.Collections;

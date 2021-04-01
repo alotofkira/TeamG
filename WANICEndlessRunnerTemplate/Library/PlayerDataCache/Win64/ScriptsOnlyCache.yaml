@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AcidRain
     - AcidRainController
+    - BackgroundScaler
     - FootstepSounds
     - Ladder
     - MenuButton
@@ -87,8 +88,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11652}
     - Class: 114
-      Script: {instanceID: 11662}
-    - Class: 114
       Script: {instanceID: 12154}
     - Class: 114
       Script: {instanceID: 12268}
@@ -114,6 +113,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13770}
     - Class: 114
       Script: {instanceID: 14384}
+    - Class: 114
+      Script: {instanceID: 22372}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -187,6 +188,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14046}
     - Class: 114
       Script: {instanceID: 14384}
+    - Class: 114
+      Script: {instanceID: 22372}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -194,6 +197,8 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -240,6 +245,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14268}
     - Class: 114
       Script: {instanceID: 14384}
+    - Class: 114
+      Script: {instanceID: 22372}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -247,6 +254,8 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -815,9 +824,15 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BackgroundScaler
   platform: 19
   scenePathNames:
   - Assets/Design/Scenes/MainMenu.unity
   - Assets/Design/Scenes/GameLevel.unity
   - Assets/Design/Scenes/ScoreScreen.unity
-  playerPath: C:/Users/Alex/Desktop/AlphaBuild/EndlessRunnerTemplate.exe
+  playerPath: C:/Users/Alex/Desktop/BetaBuild/EndlessRunnerTemplate.exe

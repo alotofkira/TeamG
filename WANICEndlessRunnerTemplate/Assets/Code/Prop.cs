@@ -7,7 +7,7 @@
 // Course:		WANIC VGP
 //
 // Copyright © 2021 DigiPen (USA) Corporation.
-//
+// rip prop.cs, you are unfortunately not useful in our plans
 //------------------------------------------------------------------------------
 
 using System.Collections;
